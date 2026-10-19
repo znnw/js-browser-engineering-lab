@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="http://www.baidu.com">
+    <input type="submit" value="免费注册">
+  </form>
+
+  <a href="http://www.baidu.com">baidu</a>
+
+  <script>
+    const form = document.querySelector('form')
+    form.addEventListener('submit', function (e) {
+      // 组织默认行为
+      e.preventDefault()
+    })
+
+    const a = document.querySelector('a')
+    a.addEventListener('click', function (e) {
+      e.preventDefault()
+    })
+  </script>
+</body>
+
+</html>

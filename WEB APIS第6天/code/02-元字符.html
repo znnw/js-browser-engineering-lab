@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 元字符
+
+    /* console.log(/哈/.test('哈')) // true
+    console.log(/哈/.test('哈哈')) // true
+    console.log('----------------') */
+
+    // 1. 边界符
+    /* console.log(/^哈/.test('哈')) // true
+    console.log(/^哈/.test('哈哈')) // true
+    console.log(/^哈/.test('二哈')) // false
+
+    console.log(/^哈$/.test('哈')) // true
+    console.log(/^哈$/.test('哈哈')) // false
+    console.log(/^哈/.test('二哈')) // false
+
+    console.log('----------------') */
+
+    // 2. 量词
+    /* console.log(/^哈$/.test('哈')) // true
+    console.log(/^哈*$/.test('')) // true
+    console.log(/^哈*$/.test('哈')) // true
+    console.log(/^哈*$/.test('哈哈')) // true
+    console.log(/^哈*$/.test('二哈很傻')) // false
+    console.log(/^哈*$/.test('哈很傻')) // false
+    console.log(/^哈*$/.test('哈很哈')) // false
+    console.log('----------------')
+
+    console.log(/^哈$/.test('哈')) // true
+    console.log(/^哈+$/.test('')) // false
+    console.log(/^哈+$/.test('哈')) // true
+    console.log(/^哈+$/.test('哈哈')) // true
+    console.log(/^哈+$/.test('二哈很傻')) // false
+    console.log(/^哈+$/.test('哈很傻')) // false
+    console.log(/^哈+$/.test('哈很哈')) // false
+    console.log('----------------')
+
+    console.log(/^哈?$/.test('')) // true
+    console.log(/^哈?$/.test('哈')) // true
+    console.log(/^哈?$/.test('哈哈')) // false
+    console.log(/^哈?$/.test('二哈很傻')) // false
+    console.log(/^哈?$/.test('哈很傻')) // false
+    console.log(/^哈?$/.test('哈很哈')) // false
+    console.log('----------------') */
+
+    // 量词 {n}
+    /* console.log(/^哈{4}$/.test('哈'))
+    console.log(/^哈{4}$/.test('哈哈'))
+    console.log(/^哈{4}$/.test('哈哈哈'))
+    console.log(/^哈{4}$/.test('哈哈哈哈')) // true
+    console.log(/^哈{4}$/.test('哈哈哈哈哈'))
+    console.log(/^哈{4}$/.test('哈哈哈哈哈哈'))
+    console.log('----------------')
+
+    console.log(/^哈{4,}$/.test('哈'))
+    console.log(/^哈{4,}$/.test('哈哈'))
+    console.log(/^哈{4,}$/.test('哈哈哈'))
+    console.log(/^哈{4,}$/.test('哈哈哈哈')) // true
+    console.log(/^哈{4,}$/.test('哈哈哈哈哈')) // true
+    console.log(/^哈{4,}$/.test('哈哈哈哈哈哈')) // true
+    console.log('----------------')
+
+    console.log(/^哈{4,6}$/.test('哈'))
+    console.log(/^哈{4,6}$/.test('哈哈'))
+    console.log(/^哈{4,6}$/.test('哈哈哈'))
+    console.log(/^哈{4,6}$/.test('哈哈哈哈')) // true
+    console.log(/^哈{4,6}$/.test('哈哈哈哈哈')) // true
+    console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈')) // true
+    console.log('----------------') */
+
+    // 字符类
+    console.log(/^[abc]$/.test('a')) // true
+    console.log(/^[abc]$/.test('b')) // true
+    console.log(/^[abc]$/.test('c')) // true
+    console.log(/^[abc]$/.test('ab')) // false
+    console.log(/^[abc]{2}$/.test('ab')) // true
+    console.log('----------------')
+
+    console.log(/^[a-z]$/.test('p')) // true
+    console.log(/^[A-Z]$/.test('p')) // false
+    console.log(/^[A-Z]$/.test('P')) // true
+    console.log(/^[0-9]$/.test(2)) // true
+    console.log(/^[a-zA-Z0-9]$/.test(2)) // true
+    console.log('----------------')
+  </script>
+</body>
+
+</html>

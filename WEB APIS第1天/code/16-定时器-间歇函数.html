@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // setInterval(函数, 间隔试卷)
+    // setInterval(function (params) {
+    //   console.log('一秒钟执行一次')
+    // }, 1000)
+
+    function fn() {
+      console.log('一秒执行一次')
+    }
+    // setInterval(函数名, 间隔试卷)
+    // setInterval(fn, 1000) 
+
+    // setInterval('fn()', 1000) // 极其不常见
+
+    let n = setInterval(fn, 1000)
+    console.log(n)
+
+    clearInterval(n)
+  </script>
+</body>
+
+</html>

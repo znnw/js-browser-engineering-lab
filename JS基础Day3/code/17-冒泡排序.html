@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let arr = [5, 4, 3, 2, 1]
+
+    /*
+    // 外层循环决定：排序几轮
+    for (let i = 0; i < arr.length - 1; i++) {
+      // 内层循环决定：这个正在排序的数需要比较的次数
+      for (let j = 0; j < arr.length - i - 1; j++) {
+        // 开始交换
+        if (arr[j] > arr[j + 1]) {
+          let temp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = temp
+        }
+      }
+    }
+    */
+
+    arr.sort()// 默认升序排序
+    console.log(arr)
+  </script>
+</body>
+
+</html>

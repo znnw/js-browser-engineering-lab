@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      border: 1px solid blue;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    const div = document.querySelector('div')
+    // 得到日期对象
+    const date = new Date()
+    div.innerHTML = date.toLocaleString() // 2024/7/23 11:27:18
+    setInterval(function () {
+      const date = new Date()
+      div.innerHTML = date.toLocaleString()
+    }, 1000)
+    // div.innerHTML = date.toDateString() // Tue Jul 23 2024
+    // div.innerHTML = date.toTimeString() // 11:28:19 GMT+0800 (中国标准时间)
+    // div.innerHTML = date.toLocaleDateString() // 2024/7/23
+    // div.innerHTML = date.toLocaleTimeString() // 11:30:26
+  </script>
+</body>
+
+</html>

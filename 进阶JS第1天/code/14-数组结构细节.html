@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 变量多，单元值少
+    /* const [a, b, c, d] = [1, 2, 3]
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d) //undefined */
+
+    // 2. 变量少，单元值多
+    /* const [a, b] = [1, 2, 3]
+    console.log(a)
+    console.log(b) */
+
+    // 3. 剩余参数 变量少，单元值多
+    /* const [a, b, ...c] = [1, 2, 3, 4]
+    console.log(a)
+    console.log(b)
+    console.log(c) */
+
+    // 4. 防止 undefined 传递
+    // const [a = 0, b = 0] = [1, 2]
+    /* const [a = 0, b = 0] = []
+    console.log(a)
+    console.log(b) */
+
+    // 5. 按需导入赋值
+    /* const [a, b, , d] = [1, 2, 3, 4]
+    console.log(a)
+    console.log(b)
+    console.log(d) */
+
+    // 多维数组解构
+    const [a, b, [c, d]] = [1, 2, [3, 4]]
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+  </script>
+</body>
+
+</html>

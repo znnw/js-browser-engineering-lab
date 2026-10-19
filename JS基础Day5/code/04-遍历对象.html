@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    let arr = ['pink', 'red', 'blue']
+    for (let k in arr) {
+      console.log(k)// k是数组的索引值，字符串类型
+      console.log(arr[k])
+    }
+    */
+
+    // 1. 遍历对象 for in
+    let obj = {
+      uname: '三余',
+      age: 18,
+      gender: '男'
+    }
+    // 2. 遍历对象
+    for (let k in obj) {
+      console.log(k)// 属性名 'uname'
+      // obj.'uname' 错误
+      console.log(obj[k])
+    }
+  </script>
+</body>
+
+</html>

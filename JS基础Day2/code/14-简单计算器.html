@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 用户输入 2个数字 操作符合
+    let num1 = +prompt('请你输入第一个数字:')
+    let num2 = +prompt('请你输入第一个数字:')
+    let sp = prompt('请你输入 + - * / 其中一个:')
+    // 2. 判断输出
+    switch (sp) {
+      case '+':
+        alert(`两个数的加法操作${num1 + num2}`)
+        break
+      case '-':
+        alert(`两个数的减法操作${num1 - num2}`)
+        break
+      case '*':
+        alert(`两个数的乘法操作${num1 * num2}`)
+        break
+      case '/':
+        alert(`两个数的除法操作${num1 / num2}`)
+        break
+      default:
+        alert(`请输入+-*/`)
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 数组reduce方法
+    // arr.reduce(function(上一次值, 当前值){}, 初始值)
+    const arr = [1, 5, 8]
+
+    // 1. 没有起始值
+    /* const total = arr.reduce(function (prev, current) {
+      return prev + current
+    })
+    console.log(total) */
+
+    // 2. 有起始值
+    /* const total = arr.reduce(function (prev, current) {
+      return prev + current
+    }, 10)
+    console.log(total) */
+
+    // 3. 箭头函数写法
+    const total = arr.reduce((prev, current) => prev + current, 10)
+    console.log(total)
+  </script>
+</body>
+
+</html>

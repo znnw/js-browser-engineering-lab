@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="http://www.itcast.cn">支付成功<span>5</span>秒钟之后跳转到首页</a>
+  <script>
+    // 1. 获取元素
+    const a = document.querySelector('a')
+    // 2. 开启定时器
+    let num = 5
+    let timeId = setInterval(function () {
+      num--
+      a.innerHTML = `支付成功<span>${num}</span>秒钟之后跳转到首页`
+      // num === 0 则停止定时器，并完成跳转
+      if (num === 0) {
+        clearInterval(timeId)
+        // 跳转
+        location.href = 'http://www.itcast.cn'
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

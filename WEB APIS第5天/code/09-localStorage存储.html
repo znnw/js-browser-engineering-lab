@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 要存储一个名字 uname
+    // localStorage.setItem(键, 值)
+    localStorage.setItem('uname', 'sanyu')
+
+    // 获取
+    console.log(localStorage.getItem('uname'))
+
+    // 删除本地存储
+    localStorage.removeItem('uname')
+
+    // 改
+    localStorage.setItem('uname', 'red')
+  </script>
+</body>
+
+</html>

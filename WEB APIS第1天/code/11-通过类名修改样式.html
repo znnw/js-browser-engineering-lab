@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: skyblue;
+      margin: 100px auto;
+      padding: 10px;
+      border: 1px solid #000
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // 1. 获取元素
+    const div = document.querySelector('div')
+    // 2. 添加类名 class 是个关键字 我们使用 className
+    div.className = 'box'
+  </script>
+</body>
+
+</html>

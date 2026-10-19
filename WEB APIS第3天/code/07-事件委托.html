@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第一个孩子</li>
+    <li>第二个孩子</li>
+    <li>第三个孩子</li>
+    <li>第四个孩子</li>
+    <li>第五个孩子</li>
+    <p>我不想变红QaQ</p>
+  </ul>
+  <script>
+    // 点击每个小li 当前li 文字变为红色
+    // 按照事件委托的方式
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'red'
+      }
+    })
+  </script>
+</body>
+
+</html>

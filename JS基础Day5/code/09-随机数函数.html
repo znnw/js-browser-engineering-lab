@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 左闭右开 能取到0 但是取不到1 中间的一个随即小数
+    // console.log(Math.random())
+
+    // 0-10 之间的整数
+    // console.log(Math.floor(Math.random() * 11))
+    /*
+    let arr = ['red', 'green', 'blue']
+    let random = Math.floor(Math.random() * arr.length)
+    console.log(arr[random])
+    */
+    // 生成N-M之间的随机数 Math.floor(Math.random() * (M - N + 1)) + N
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1)) + N
+    }
+    console.log(getRandom(4, 8))
+  </script>
+</body>
+
+</html>

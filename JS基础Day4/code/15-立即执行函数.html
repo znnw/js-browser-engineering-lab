@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 立即执行函数：防止变量污染
+    // let num = 10
+    // (function(){})()
+    // 第一个括号中为形参，第二个括号中为实参
+    (function () {
+      let num = 10
+    })();
+    (function () {
+      let num = 20
+    })();
+
+    // 第二种写法
+    // (function(){}())
+    (function () {
+      let num = 30
+    }());
+  </script>
+</body>
+
+</html>

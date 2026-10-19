@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let num = 20
+    function fn() {
+      num = 10// 这里忘记声明，实际为全局变量，不允许
+    }
+    fn()
+    console.log(num)
+
+    function fun(x, y) {
+      // 形参可以看作是函数的局部变量
+      console.log(x)
+    }
+    fun(1, 2)
+    console.log(x)//错误
+  </script>
+</body>
+
+</html>

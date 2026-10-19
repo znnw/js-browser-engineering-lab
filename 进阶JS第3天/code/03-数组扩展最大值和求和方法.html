@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [1, 2, 3]
+    // 自定义数组扩展方法 求和、最大值
+    // 1. 定义的方法，任何一个数组实例对象都可以使用
+    // 2. 自定义方法写到 数组的prototype中
+    // 最大值
+    Array.prototype.max = function () {
+      return Math.max(...this)
+    }
+    // 求和
+    Array.prototype.sum = function () {
+      return this.reduce((prev, item) => prev + item, 0)
+    }
+    console.log(arr.max())
+    console.log(arr.sum())
+  </script>
+</body>
+
+</html>

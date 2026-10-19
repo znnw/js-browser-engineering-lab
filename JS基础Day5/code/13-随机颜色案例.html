@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // 1. 自定义一个随机颜色函数
+    function getRandomColor(flag) {
+      if (flag) {
+        // 3. true 返回 #ffffff
+        return myRandomColorHexadecimal()
+      } else {
+        // 4. false 返回rgb(255,255,255)
+        return `rgb(${myRandomColorRgb()},${myRandomColorRgb()},${myRandomColorRgb()})`
+      }
+    }
+
+    // 2. 调用函数 getRandomColor(布尔值)
+    console.log(getRandomColor(true))
+    console.log(getRandomColor(false))
+
+    const div = document.querySelector('div')
+    div.style.backgroundColor = getRandomColor()
+
+    // 自定义函数 返回0~255之间的随机数
+    function myRandomColorRgb() {
+      return Math.floor(Math.random() * 255)
+    }
+    // 自定义函数 返回十六进制的颜色字符串
+    function myRandomColorHexadecimal() {
+      let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+      let result = '#'
+      for (let i = 0; i < 6; i++) {
+        result += arr[Math.floor(Math.random() * arr.length)]
+      }
+      return result
+    }
+  </script>
+</body>
+
+</html>

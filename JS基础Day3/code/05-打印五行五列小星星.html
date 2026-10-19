@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // for (let i = 0; i < 5; i++) {
+    //   for (let j = 0; j < 5; j++) {
+    //     document.write('★')
+    //   }
+    //   document.write('<br>')
+    // }
+
+    // 升级版本
+    let row = +prompt('请输入打印几行')
+    let col = +prompt('请输入打印几列')
+    // 外层打印行数
+    for (let i = 0; i < row; i++) {
+      // 里层打印列数
+      for (let j = 0; j < col; j++) {
+        document.write('★')
+      }
+      // 进行换行显示
+      document.write('<br>')
+    }
+  </script>
+</body>
+
+</html>

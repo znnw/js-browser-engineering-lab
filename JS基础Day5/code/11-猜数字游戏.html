@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 随机生成一个数字 1 ~ 10
+    let random = Math.floor(Math.random() * 10) + 1
+    while (true) {
+      // 2. 用户输入
+      let num = +prompt('请输入你猜的数字')
+      // 3. 判断输出
+      if (num > random) {
+        alert('您猜大了')
+      } else if (num < random) {
+        alert('您猜小了')
+      } else {
+        alert('猜对了')
+        break
+      }
+    }
+  </script>
+</body>
+
+</html>

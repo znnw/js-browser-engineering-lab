@@ -1,0 +1,67 @@
+name: Bug report / 问题反馈
+description: Report a broken or incorrect demo page
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the project. Please include enough detail to reproduce the issue.
+
+  - type: input
+    id: page
+    attributes:
+      label: Page path / 页面路径
+      description: Path to the affected HTML file.
+      placeholder: WEB APIS第2天/code/08-轮播图完整版.html
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser / 浏览器
+      options:
+        - Chrome
+        - Edge
+        - Firefox
+        - Safari
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: List the exact actions that trigger the problem.
+      placeholder: |
+        1. Open the page.
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / 预期结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / 实际结果
+      description: Include console errors or network errors when relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context / 补充信息
+      description: Add screenshots, viewport size, or other useful details.
+    validations:
+      required: false

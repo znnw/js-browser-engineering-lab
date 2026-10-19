@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      uname: 'pink老师',
+      age: 18,
+      gender: '女'
+    }
+
+    // 存储 复杂数据类型
+    localStorage.setItem('obj', JSON.stringify(obj))
+
+    const str = localStorage.getItem('obj')
+
+    console.log(JSON.parse(str))
+  </script>
+</body>
+
+</html>

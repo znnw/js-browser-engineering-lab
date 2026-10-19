@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src="./lodash.min.js"></script>
+  <script>
+    // 利用防抖实现性能优化
+    // 需求：鼠标在盒子上移动，里面的数字就会变化+1
+    const box = document.querySelector('.box')
+    let i = 1
+    function mouseMove() {
+      box.innerHTML = i++
+      // 如果存在开销较大操作，大量数据处理，大量dom操作，可能会卡顿
+
+    }
+    // 添加事件
+    // box.addEventListener('mousemove', mouseMove)
+
+    // 利用 lodash实现防抖 - 500毫秒之后采取+1
+    // 语法：_.debounce(fun, 事件)
+    // box.addEventListener('mousemove', _.debounce(mouseMove, 500))
+
+    // 手写防抖函数
+    // 核心是利用 setTimeout定时器
+    // 1. 声明定时器变量
+    // 2. 每次鼠标移动（事件触发）的时候都要先判断是否有定时器，如果有先清楚以前的定时器
+    // 3. 如果没有定时器，则开启定时器，存入到定时器变量里面
+    // 4. 定时器里面写函数调用
+    function debounce(fn, t) {
+      let timer
+      // return 返回一个匿名函数
+      return function () {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(function () {
+          fn() // 加小括号调用 fn 函数
+        }, t)
+      }
+    }
+    box.addEventListener('mousemove', debounce(mouseMove, 500))
+
+  </script>
+</body>
+
+</html>

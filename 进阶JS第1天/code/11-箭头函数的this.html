@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* console.log(this) // window
+    // 普通函数
+    function fn() {
+      console.log(this) // window
+    }
+    fn()
+
+    const obj = {
+      name: 'andy',
+      sayHi: function () {
+        console.log(this)
+      }
+    } */
+
+    // 箭头函数
+    const fn = () => {
+      console.log(this)
+    }
+
+    // 对象方法箭头函数 this
+    /* const object = {
+      uname: 'andy',
+      sayHi: () => {
+        console.log(this) // window
+      }
+    }
+    object.sayHi() */
+
+    const obj = {
+      uname: 'andy',
+      sayHi: function () {
+        let i = 10
+        const count = () => {
+          console.log(this)
+        }
+        count()
+      }
+    }
+    obj.sayHi()
+  </script>
+</body>
+
+</html>

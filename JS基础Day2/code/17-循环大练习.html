@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 页面输出1~100
+    // let i = 1
+    // while (i <= 100) {
+    //   document.write(`这是第${i}个数 <br>`)
+    //   i++
+    // }
+
+    // 2. 页面输出1~100 累加和
+    // let i = 1
+    // let sum = 0
+    // while (i <= 100) {
+    //   sum += i
+    //   i++
+    // }
+    // console.log(sum)
+
+    // 3. 页面输出1~100 偶数和
+    let i = 1
+    let sum = 0
+    while (i <= 100) {
+      // 筛选偶数
+      if (i % 2 === 0) {
+        sum += i
+      }
+      i++
+    }
+    console.log(sum)
+  </script>
+</body>
+
+</html>

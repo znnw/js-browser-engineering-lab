@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生就业统计表</title>
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>学生就业统计表</h1>
+  <form class="info" autocomplete="off">
+    <input type="text" class="uname" name="uname" placeholder="姓名" />
+    <input type="text" class="age" name="age" placeholder="年龄" />
+    <input type="text" class="salary" name="salary" placeholder="薪资" />
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    <select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">
+      <i class="iconfont icon-tianjia"></i>添加
+    </button>
+  </form>
+
+  <div class="title">共有数据<span>0</span>条</div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>录入时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    const tbody = document.querySelector('tbody')
+    // 1. 渲染业务
+    const arr = JSON.parse(localStorage.getItem('data')) || []
+
+    // 使用数组的 map方法和join方法 来渲染页面
+    function render() {
+      // 利用 map 遍历数组，返回对应tr的数组
+      const trArr = arr.map(function (ele, index) {
+        return `
+          <tr>
+            <td>${ele.stuId}</td>
+            <td>${ele.uname}</td>
+            <td>${ele.age}</td>
+            <td>${ele.gender}</td>
+            <td>${ele.salary}</td>
+            <td>${ele.city}</td>
+            <td>${ele.time}</td>
+            <td>
+              <a href="javascript:" data-id="${index}">
+                <i class="iconfont icon-shanchu"></i>
+                删除
+              </a>
+            </td>
+          </tr>
+        `
+      })
+      // 把数组转换为字符串 join
+      // 把生成的字符串追加给tbody
+      tbody.innerHTML = trArr.join('')
+      // 显示共计有几条数据
+      document.querySelector('.title span').innerHTML = arr.length
+    }
+    render()
+
+    // 2. 新增业务
+    const info = document.querySelector('.info')
+    const uname = document.querySelector('.uname')
+    const age = document.querySelector('.age')
+    const salary = document.querySelector('.salary')
+    const gender = document.querySelector('.gender')
+    const city = document.querySelector('.city')
+
+    info.addEventListener('submit', function (e) {
+      e.preventDefault()
+      // 非空判断
+      if (!uname.value || !age.value || !salary.value) {
+        return alert('输入内容不能为空')
+      }
+      arr.push({
+        // 新增序号应该是最后一条数据的stuId + 1
+        // 数组[数组的长度 - 1].stuId + 1
+        stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
+        uname: uname.value,
+        age: age.value,
+        salary: salary.value,
+        gender: gender.value,
+        city: city.value,
+        time: new Date().toLocaleString()
+      })
+      render()
+      this.reset()
+      // 存入本地存储中
+      localStorage.setItem('data', JSON.stringify(arr))
+    })
+
+    // 3.删除业务
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        if (confirm('您确定要删除这条数据吗？')) {
+          // 从数组中删除数据
+          arr.splice(e.target.dataset.id, 1)
+          // 在本地存储中覆盖新数组
+          localStorage.setItem('data', JSON.stringify(arr))
+          // 渲染页面
+          render()
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

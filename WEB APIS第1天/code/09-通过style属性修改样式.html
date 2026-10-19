@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    // 1. 获取元素
+    const box = document.querySelector('.box')
+    // 2. 修改样式属性 对象.style.样式属性 = ''
+    box.style.width = '400px'
+    box.style.backgroundColor = 'yellow'
+    box.style.border = '2px solid blue'
+    box.style.borderTop = '2px solid red'
+  </script>
+</body>
+
+</html>

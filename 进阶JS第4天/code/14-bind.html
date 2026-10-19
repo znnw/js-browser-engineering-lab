@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>发送短信</button>
+  <script>
+    const obj = {
+      age: 18
+    }
+    function fn() {
+      console.log(this)
+    }
+    // 1. bind 不调用函数
+    // 2. 改变this指向
+    // 3. 返回值是函数
+    const fun = fn.bind(obj)
+    fun()
+
+    // 需求：有一个按钮，点击后金庸，2秒后开启
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', function () {
+      // 禁用按钮
+      this.disabled = true
+      window.setTimeout(function () {
+        // 在这个普通函数中，将this指向btn
+        this.disabled = false
+      }.bind(this), 2000)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2222年2月22日</p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="scond">20</span>
+    </p>
+    <p class="tips">18:30:00下课</p>
+  </div>
+  <script>
+    // 随机颜色函数
+    function getRandomColor(flag = true) {
+      if (flag) {
+        // 3. true 返回 #ffffff
+        return myRandomColorHexadecimal()
+      } else {
+        // 4. false 返回rgb(255,255,255)
+        return `rgb(${myRandomColorRgb()},${myRandomColorRgb()},${myRandomColorRgb()})`
+      }
+    }
+
+    // 2. 调用函数 getRandomColor(布尔值)
+    console.log(getRandomColor(true))
+    console.log(getRandomColor(false))
+
+    const div = document.querySelector('div')
+    div.style.backgroundColor = getRandomColor()
+
+    // 自定义函数 返回0~255之间的随机数
+    function myRandomColorRgb() {
+      return Math.floor(Math.random() * 255)
+    }
+    // 自定义函数 返回十六进制的颜色字符串
+    function myRandomColorHexadecimal() {
+      let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+      let result = '#'
+      for (let i = 0; i < 6; i++) {
+        result += arr[Math.floor(Math.random() * arr.length)]
+      }
+      return result
+    }
+
+    // 页面刷新 随机得到颜色
+    const countdown = document.querySelector('.countdown')
+    countdown.style.backgroundColor = getRandomColor()
+
+    // 函数封装 getCountTIme
+    function getCountTIme() {
+      // 得到当前的时间戳
+      const now = +new Date()
+      // 得到将来的时间戳
+      const last = +new Date('2024-7-23 18:30:00')
+      // console.log(now, last)
+      // 得到剩余的时间戳，转换为 秒数
+      const count = (last - now) / 1000
+      // console.log(count)
+
+      // 转换为 时分秒
+      let d = parseInt(count / 60 / 60 / 24)
+      let h = parseInt(count / 60 / 60 % 24)
+      h = h < 10 ? '0' + h : h
+      let m = parseInt(count / 60 % 60)
+      m = m < 10 ? '0' + m : m
+      let s = parseInt(count % 60)
+      s = s < 10 ? '0' + s : s
+      console.log(d, h, m, s)
+
+
+      // 把时分秒写到对应的盒子里面
+      const hour = document.querySelector('#hour')
+      const minutes = document.querySelector('#minutes')
+      const scond = document.querySelector('#scond')
+      hour.innerHTML = h
+      minutes.innerHTML = m
+      scond.innerHTML = s
+    }
+
+    // 先调用一次
+    getCountTIme()
+
+    // 开启定时器
+    setInterval(getCountTIme, 1000)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* const Person = {
+      eays: 2,
+      head: 1
+    } */
+    function Person() {
+      this.eyes = 2
+      this.head = 1
+    }
+
+    // 女人 构造函数
+    function Woman() {
+    }
+    Woman.prototype = new Person()
+    Woman.prototype.constructor = Woman
+    // 给女人添加一个方法
+    Woman.prototype.baby = function () {
+      console.log('baby')
+    }
+    const red = new Woman()
+    console.log(red)
+    console.log(Woman.prototype)
+
+    // 男人 构造函数
+    function Man() {
+    }
+    Man.prototype = new Person()
+    Man.prototype.constructor = Man
+    const pink = new Man()
+    console.log(pink)
+  </script>
+</body>
+
+</html>

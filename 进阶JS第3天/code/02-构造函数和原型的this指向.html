@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star(uname) {
+      this.uname = uname
+    }
+    // 原型对象中的this 指向实例对象
+    Star.prototype.sing = function () {
+      console.log('唱歌')
+    }
+    // 实例对象
+    const ldh = new Star('刘德华')
+  </script>
+</body>
+
+</html>

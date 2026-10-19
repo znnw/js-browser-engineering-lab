@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = ['red', 'blue', 'pink']
+
+    // 1. 数组 map 方法
+    const newArr = arr.map(function (ele, index) {
+      return ele + '颜色'
+    })
+    console.log(newArr)
+
+    //2. join() 方法用于把数组中的所有元素转换一个字符串
+    // 小括号为空则用逗号分隔
+    console.log(newArr.join()) //red颜色,blue颜色,pink颜色
+  </script>
+</body>
+
+</html>
